@@ -118,7 +118,7 @@ b. 网关服务器上使用的是ss-redir，也就是透明代理会使用到的
 到此代理服务器与网关服务器的隧道就建立好了。
 
 c. 将经过网关服务器的请求转发至本地的隧道，也就是1080端口，达到代理的目的，但是这样的话，所有的请求都会使用代理，所以要反过来做，将指定IP的请求转发至隧道。
-    <pre><code>
+```
 [root@design tmp]# cat ss-black.sh
 #!/bin/sh
 
@@ -151,7 +151,7 @@ iptables -t nat -A SHADOWSOCKS -p tcp -j RETURN
 # Apply the rules
 iptables -t nat -A PREROUTING -p tcp -j SHADOWSOCKS
 
-    </pre></code>
+```
 
 以上是网上的脚本，只有列表中的地址会使用代理。
 但是这样就得手工维护这个地址，所以要使用更智能的方法，也就是自动获得这些IP地址。
