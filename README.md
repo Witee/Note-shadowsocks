@@ -6,6 +6,7 @@
 
 ###1. 所用到的软件 
 shadowsocks : https://github.com/shadowsocks/shadowsocks-libev
+
 dnsmasq: http://www.thekelleys.org.uk/dnsmasq/doc.html
 
 ###2. 网络拓扑
