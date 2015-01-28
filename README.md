@@ -173,7 +173,7 @@ iptables -t nat -A PREROUTING -p tcp -j RETURN
        tar -zxf dnsmasq-2.72.tar.gz ; cd dnsmasq-2.72 ; 安装方法在此文件夹的setup.html 中，也就是直接make install ,会把程序安装到 /usr/local/sbin/dnsmasq ，然后cp dnsmasq.conf.example /etc/dnsmasq.conf  ; 直接执行dnsmasq就可以直接启动，配置文件读取/etc/dnsmasq.conf ，配置文件中打开并指定文件 conf-file=/etc/dnsmasq.d/xxx.conf
       修改 xxx.conf 内容为：
 </pre></code>
-#Google and Youtube
+\#Google and Youtube
 server=/.google.com/208.67.222.222#443
 server=/.google.com.hk/208.67.222.222#443
 server=/.gstatic.com/208.67.222.222#443
