@@ -161,7 +161,7 @@ d. 具体实施：
     1> yum install ipset   # ipset的使用方法及ipset 与iptables的关系请自行google
     2> ipset -N setmefree iphash  # 新建一个IP的池子 通过 ipset list命令可以查到池中的IP，现在是空的
     3> 添加iptables 
-    <pre><code>
+<pre><code>
 iptables -t nat -A PREROUTING -p tcp -m multiport --dports 443 -m set --match-set setmefree dst -j REDIRECT --to-ports 1080
 iptables -t nat -A PREROUTING -p tcp -m multiport --dports 80 -m set --match-set setmefree dst -j REDIRECT --to-ports 1080
 iptables -t nat -A PREROUTING -p tcp -j RETURN
@@ -172,7 +172,7 @@ iptables -t nat -A PREROUTING -p tcp -j RETURN
         从官网下载dnsmasq源码包并安装，不能直接yum安装，因为yum装的不会支持ipset，编写文档时dnsmasq的版本是：dnsmasq-2.72.tar.gz 如无重大更新，请下载最新版本。
        tar -zxf dnsmasq-2.72.tar.gz ; cd dnsmasq-2.72 ; 安装方法在此文件夹的setup.html 中，也就是直接make install ,会把程序安装到 /usr/local/sbin/dnsmasq ，然后cp dnsmasq.conf.example /etc/dnsmasq.conf  ; 直接执行dnsmasq就可以直接启动，配置文件读取/etc/dnsmasq.conf ，配置文件中打开并指定文件 conf-file=/etc/dnsmasq.d/xxx.conf
       修改 xxx.conf 内容为：
-      </pre></code>
+</pre></code>
 #Google and Youtube
 server=/.google.com/208.67.222.222#443
 server=/.google.com.hk/208.67.222.222#443
