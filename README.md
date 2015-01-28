@@ -9,18 +9,18 @@ shadowsocks : https://github.com/shadowsocks/shadowsocks-libev
 dnsmasq: http://www.thekelleys.org.uk/dnsmasq/doc.html
 
 ###2. 网络拓扑
-![imgs](https://github.com/Witee/shadowsocks/raw/master/imgs/tuopu1.png）
+![imgs]( https://github.com/Witee/shadowsocks/raw/master/imgs/tuopu1.png ）
 
 a. 网关服务器有两块网卡，eth1为内网，eth0为外网，通过iptables nat转发将内网包转发到外网，
 -A POSTROUTING ! -s 192.168.2.1/32 -j SNAT --to-source xxx.xxx.xxx.xxx
 以下是iptables相关表与链的图
 
-![image](https://github.com/Witee/shadowsocks/raw/master/imgs/iptables.png）
+![image]( https://github.com/Witee/shadowsocks/raw/master/imgs/iptables.png ）
 
 b. 网关安装dnsmasq提供本地dns服务
 
 ###3.  使用代理时的拓扑图
-![image](https://github.com/Witee/shadowsocks/raw/master/imgs/tuopu2.png）
+![image]( https://github.com/Witee/shadowsocks/raw/master/imgs/tuopu2.png ）
 上图为通过代理服务器访问国外网站的结构图
 
 ###4. 代理服务器上安装：
