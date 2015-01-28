@@ -30,6 +30,7 @@ b. git clone https://github.com/shadowsocks/shadowsocks-libev.git
 cd shadowsocks ; ./configure —prefix=/usr/local/shadowsocks ;make ; make install  ； mkdir /usr/local/shadowsocks/etc/
 
 c.  shadowsocks配置文件，ss-local ss-server ss-redir都是同样的配置
+<pre><code>
 cat /usr/local/shadowsocks/etc/config.json
 {
   "server":”your.server.ip.x",
@@ -47,7 +48,7 @@ cat /usr/local/shadowsocks/etc/config.json
     "timeout":600,
     "method":"[加密方式]"
 }
-
+</pre></code>
 d . 启动脚本
 [root@design etc]# cat /etc/init.d/shadowsocks
 
