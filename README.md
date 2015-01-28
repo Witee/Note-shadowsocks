@@ -1,9 +1,8 @@
 #笔记：使用shadowsocks+dnsmasq+ipset+iptables 实现公办网络透明代理（智能翻墙）
 
 ##前言：
-    网上大多数写的都是关于openWRT路由器关于shadowsocks的配置，
-如：http://hong.im/2014/03/16/configure-an-openwrt-based-router-to-use-shadowsocks-and-redirect-foreign-traffic/
-我这里写的是关于办公网络的配置，希望对大家有所帮助。
+>网上大多数写的都是关于openWRT路由器关于shadowsocks的配置，
+如：http://hong.im/2014/03/16/configure-an-openwrt-based-router-to-use-shadowsocks-and-redirect-foreign-traffic/ 我这里写的是关于办公网络的配置，希望对大家有所帮助。
 
 ###1. 所用到的软件 
 shadowsocks : https://github.com/shadowsocks/shadowsocks-libev
