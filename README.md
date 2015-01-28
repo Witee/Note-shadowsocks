@@ -73,13 +73,13 @@ case $1 in
      ;;
 esac
 
-# chmod 755 /etc/init.d/shadowsocks
-# /etc/init.d/shadowsocks start
+chmod 755 /etc/init.d/shadowsocks
+/etc/init.d/shadowsocks start
 
 5. 网关服务器上安装：
 a.  shadowsocks安装方法同上，配置文件一至，启动脚本有所修改：
 [root@route-back ~]# cat /etc/init.d/shadowsocks
-#!/bin/bash
+ #!/bin/bash
 
 start() {
     echo "Starting ss-redir..."
