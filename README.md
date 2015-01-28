@@ -9,7 +9,7 @@ shadowsocks : https://github.com/shadowsocks/shadowsocks-libev
 dnsmasq: http://www.thekelleys.org.uk/dnsmasq/doc.html
 
 ###2. 网络拓扑
-![image]( https://github.com/Witee/shadowsocks/raw/master/imgs/tuopu1.png ）
+![image]( http://github.com/Witee/shadowsocks/raw/master/imgs/tuopu1.png ）
 
 a. 网关服务器有两块网卡，eth1为内网，eth0为外网，通过iptables nat转发将内网包转发到外网，
 -A POSTROUTING ! -s 192.168.2.1/32 -j SNAT --to-source xxx.xxx.xxx.xxx
