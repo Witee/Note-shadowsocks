@@ -11,6 +11,7 @@ dnsmasq: http://www.thekelleys.org.uk/dnsmasq/doc.html
 
 ###2. 网络拓扑
 ![image]( https://github.com/Witee/shadowsocks/master/imgs/tuopu1.png ）
+![images](https://github.com/Witee/shadowsocks/blob/master/imgs/tuopu1.png)
 
 
 a. 网关服务器有两块网卡，eth1为内网，eth0为外网，通过iptables nat转发将内网包转发到外网，
