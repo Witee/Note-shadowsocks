@@ -46,7 +46,7 @@ cat /usr/local/shadowsocks/etc/config.json
 解释：
     "server":"[服务器IP地址]",
     "server_port":[服务器端口],
-    "local_port":[本地端口,稍后iptables会用到],
+    "local_port":[本地端口],
     "password":"[密码]",
     "timeout":600,
     "method":"[加密方式]"
@@ -293,6 +293,6 @@ resolv-file=/etc/dnsmasq.resolv.conf
 ```
 
 c.  ipset list 中的地址是不会自动删除的，所以最好定期执行ipset flush setmefree 来清空setmefree中的IP以保证都是正常的。
-
+d.  网关服务器上还可以安装squid正向代理。
 ###7. 至此配置完成
 
