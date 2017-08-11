@@ -1,15 +1,15 @@
-#笔记：使用shadowsocks+dnsmasq+ipset+iptables 实现公办网络透明代理（智能翻墙）
+# 笔记：使用shadowsocks+dnsmasq+ipset+iptables 实现公办网络透明代理（智能翻墙）
 
-##前言：
+## 前言：
 >网上大多数写的都是关于openWRT路由器关于shadowsocks的配置，
 如：http://hong.im/2014/03/16/configure-an-openwrt-based-router-to-use-shadowsocks-and-redirect-foreign-traffic/ 我这里写的是关于办公网络的配置，希望对大家有所帮助。
 
-###1. 所用到的软件 
+### 1. 所用到的软件 
 shadowsocks : https://github.com/shadowsocks/shadowsocks-libev
 
 dnsmasq: http://www.thekelleys.org.uk/dnsmasq/doc.html
 
-###2. 网络拓扑
+### 2. 网络拓扑
 
 ![images](https://github.com/Witee/shadowsocks/blob/master/imgs/tuopu1.png)
 
@@ -22,11 +22,11 @@ a. 网关服务器有两块网卡，eth1为内网，eth0为外网，通过iptabl
 
 b. 网关安装dnsmasq提供本地dns服务
 
-###3.  使用代理时的拓扑图
+### 3.  使用代理时的拓扑图
 ![tuopu2](https://github.com/Witee/shadowsocks/blob/master/imgs/tuopu2.png)
 上图为通过代理服务器访问国外网站的结构图
 
-###4. 代理服务器上安装：
+### 4. 代理服务器上安装：
 a. 
 ```
 yum install build-essential autoconf libtool openssl-devel gcc git -y
@@ -87,7 +87,7 @@ chmod 755 /etc/init.d/shadowsocks
 /etc/init.d/shadowsocks start
 ```
 
-###5. 网关服务器上安装：
+### 5. 网关服务器上安装：
 a.  shadowsocks安装方法同上，配置文件一至，启动脚本有所修改：
 ```
 [root@route-back ~]# cat /etc/init.d/shadowsocks
@@ -285,7 +285,7 @@ ipset=/.feedly.com/setmefree
 注意server=与ipset=是一一对应的，意思就是通过dnsmasq解析出来的IP写到地址池(setmefree)中。
 启动dnsmasq，当有访问的时候 ipset list 才会显示出地址，此时访问此列表中的地址的80 443端口的语法就会通过代理了。
 
-###6. 注意事项
+### 6. 注意事项
 a.  xxx.conf 中使用的dns必须是无污染的，也就是没有被强制解析到错误的地址，208.67.222.222 为Opendns ，支持使用非标准端口（443,5353），据说不稳定，当不稳定的时候访问没有在列表中的域名时会不能解析出地址，所以还可以在代理服务器上安装另外一个dnsmasq，设置缓存大一点（cache-size=1000000），并通过设置resolv-file=/etc/dnsmasq.resolv.conf中的opendns来解析国外IP，网关服务器再使用代理服务器上的dns来解析，这样如果opendns如果不稳定的时候还可以使用代理服务器上的dns缓存来解析。
 b. 代理服务器上安装dnsmasq方法一致，只是配置设置：
 ```
@@ -298,5 +298,6 @@ resolv-file=/etc/dnsmasq.resolv.conf
 
 c.  ipset list 中的地址是不会自动删除的，所以最好定期执行ipset flush setmefree 来清空setmefree中的IP以保证都是正常的。
 d.  网关服务器上还可以安装squid正向代理。
-###7. 至此配置完成
+
+### 7. 至此配置完成
 
