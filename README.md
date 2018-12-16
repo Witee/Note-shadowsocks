@@ -17,7 +17,7 @@
 
 - 网络拓扑
 
-  ![images](https://github.com/Witee/shadowsocks/blob/master/imgs/tuopu1.png)
+    ![images](https://github.com/Witee/shadowsocks/blob/master/imgs/tuopu1.png)
 
 
   - 网关服务器有两块网卡，`eth1`为内网，`eth0`为外网，通过`iptables nat`转发将内网包转发到外网，
