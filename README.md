@@ -24,6 +24,7 @@ b. 网关安装dnsmasq提供本地dns服务
 
 ### 3.  使用代理时的拓扑图
 ![tuopu2](https://github.com/Witee/shadowsocks/blob/master/imgs/tuopu2.png)
+
 上图为通过代理服务器访问国外网站的结构图
 
 ### 4. 代理服务器上安装：
